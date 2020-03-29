@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Plan de Negocios</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- Tempusdominus Bbootstrap 4 -->
+        <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+        <!-- iCheck -->
+        <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+        <!-- JQVMap -->
+        <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="dist/css/adminlte.min.css">
+        <!-- overlayScrollbars -->
+        <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+        <!-- Daterange picker -->
+        <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+        <!-- summernote -->
+        <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
+        <!-- Google Font: Source Sans Pro -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    </head>
+    <body class="hold-transition sidebar-mini layout-fixed sidebar-collapse">
+        <div class="wrapper">
+
+            <div th:replace="menu"></div>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <div class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-4">
+                                <h1 class="m-0 text-dark">Calendario</h1>
+                            </div><!-- /.col -->
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                                    Ayuda
+                                </button>
+                            </div>
+                            <div class="col-sm-4">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                                    <li class="breadcrumb-item active">Mercado</li>
+                                    <li class="breadcrumb-item active">Objetivo de Ventas</li>
+                                </ol>
+                            </div><!-- /.col -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container-fluid -->
+                </div>
+                <!-- /.content-header -->
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <!-- left column -->
+                            <div class="col-md-12">
+                                <div class="card card-orange">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Calendario de Temporalidad de la Producción</h3>
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <form role="form">
+                                            <div class="row">
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>MAteria Prima</label>
+                                                        <input type="text" class="form-control" placeholder="Uno">
+                                                        <input type="text" class="form-control" placeholder="Dos">
+                                                        <input type="text" class="form-control" placeholder="Tres">
+                                                        <input type="text" class="form-control" placeholder="Cuatro">
+                                                        <input type="text" class="form-control" placeholder="Cinco">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Producto</label>
+                                                        <input type="text" class="form-control" placeholder="Uno">
+                                                        <input type="text" class="form-control" placeholder="Dos">
+                                                        <input type="text" class="form-control" placeholder="Tres">
+                                                        <input type="text" class="form-control" placeholder="Cuatro">
+                                                        <input type="text" class="form-control" placeholder="Cinco">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Presentación</label>
+                                                        <input type="text" class="form-control" placeholder="Uno">
+                                                        <input type="text" class="form-control" placeholder="Dos">
+                                                        <input type="text" class="form-control" placeholder="Tres">
+                                                        <input type="text" class="form-control" placeholder="Cuatro">
+                                                        <input type="text" class="form-control" placeholder="Cinco">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Enero</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Febrero</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Marzo</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Abril</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Junio</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Julio</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Agosto</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Septiembre</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Octubre</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Noviembre</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Diciembre</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <!-- left column -->
+                            <div class="col-md-12">
+                                <div class="card card-green">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Calendario de Producción, Transformación</h3>
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <form role="form">
+                                            <div class="row">
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Proceso</label>
+                                                        <input type="text" class="form-control" placeholder="Uno">
+                                                        <input type="text" class="form-control" placeholder="Dos">
+                                                        <input type="text" class="form-control" placeholder="Tres">
+                                                        <input type="text" class="form-control" placeholder="Cuatro">
+                                                        <input type="text" class="form-control" placeholder="Cinco">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Enero</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Febrero</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Marzo</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Abril</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Junio</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Julio</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Agosto</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Septiembre</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Octubre</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Noviembre</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                                <div class="col" width="7%">
+                                                    <div class="form-group">
+                                                        <label>Diciembre</label>
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                        <input type="text" class="form-control" placeholder="00.00 Blvs">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                        	<div class="col-sm-12">    
+       							<button type="submit" class="btn btn-primary float-right">Guardar</button>
+   							</div>
+                        </div>                        
+                    </div><!-- /.container-fluid -->
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <strong>Copyright All rights reserved.</strong>
+            </footer>
+
+            <div class="modal fade" id="modal-default">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Ayuda</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                El emprendimiento necesitará programar la producción de acuerdo al suministro de la materia prima. Así, el calendario de producción debería señalar cuándo está disponible la materia prima. Todos los productos deberían mostrarse en el mismo calendario
+                                Esto contribuirá a determinar las cantidades  que se podrían hacer por periodo de producción ( día, semana, mes, zafra, de acuerdo a la estacionalidad del producto)
+                            </p>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Control sidebar content goes here -->
+            </aside>
+            <!-- /.control-sidebar -->
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery -->
+        <script src="plugins/jquery/jquery.min.js"></script>
+        <!-- jQuery UI 1.11.4 -->
+        <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <script>
+            $.widget.bridge('uibutton', $.ui.button)
+        </script>
+        <!-- Bootstrap 4 -->
+        <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- ChartJS -->
+        <script src="plugins/chart.js/Chart.min.js"></script>
+        <!-- Sparkline -->
+        <script src="plugins/sparklines/sparkline.js"></script>
+        <!-- JQVMap -->
+        <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+        <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+        <!-- jQuery Knob Chart -->
+        <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+        <!-- daterangepicker -->
+        <script src="plugins/moment/moment.min.js"></script>
+        <script src="plugins/daterangepicker/daterangepicker.js"></script>
+        <!-- Tempusdominus Bootstrap 4 -->
+        <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+        <!-- Summernote -->
+        <script src="plugins/summernote/summernote-bs4.min.js"></script>
+        <!-- overlayScrollbars -->
+        <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="dist/js/adminlte.js"></script>
+        <script src="dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="dist/js/pages/dashboard.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="dist/js/demo.js"></script>
+        <script>
+            $(function () {
+                /* ChartJS
+                 * -------
+                 * Here we will create a few charts using ChartJS
+                 */
+                var areaChartData = {
+                    labels: ['2021', '2022', '2023', '2024', '2025'],
+                    datasets: [
+                        {
+                            label: 'Uno',
+                            backgroundColor: 'rgba(60,141,188,0.9)',
+                            borderColor: 'rgba(60,141,188,0.8)',
+                            pointRadius: false,
+                            pointColor: '#3b8bba',
+                            pointStrokeColor: 'rgba(60,141,188,1)',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(60,141,188,1)',
+                            data: [28, 48, 40, 19, 86]
+                        },
+                        {
+                            label: 'Dos',
+                            backgroundColor: 'rgba(210, 214, 222, 1)',
+                            borderColor: 'rgba(210, 214, 222, 1)',
+                            pointRadius: false,
+                            pointColor: 'rgba(210, 214, 222, 1)',
+                            pointStrokeColor: '#c1c7d1',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(220,220,220,1)',
+                            data: [65, 59, 80, 81, 56]
+                        },
+                        {
+                            label: 'Tres',
+                            backgroundColor: 'rgba(246,233,49,0.9)',
+                            borderColor: 'rgba(60,141,188,0.8)',
+                            pointRadius: false,
+                            pointColor: '#3b8bba',
+                            pointStrokeColor: 'rgba(60,141,188,1)',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(60,141,188,1)',
+                            data: [28, 48, 40, 19, 86]
+                        },
+                        {
+                            label: 'Cuatro',
+                            backgroundColor: 'rgba(52, 201, 7, 1)',
+                            borderColor: 'rgba(210, 214, 222, 1)',
+                            pointRadius: false,
+                            pointColor: 'rgba(210, 214, 222, 1)',
+                            pointStrokeColor: '#c1c7d1',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(220,220,220,1)',
+                            data: [65, 59, 80, 81, 56]
+                        },
+                        {
+                            label: 'Cinco',
+                            backgroundColor: 'rgba(249,31,31,0.9)',
+                            borderColor: 'rgba(60,141,188,0.8)',
+                            pointRadius: false,
+                            pointColor: '#3b8bba',
+                            pointStrokeColor: 'rgba(60,141,188,1)',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(60,141,188,1)',
+                            data: [28, 48, 40, 19, 86]
+                        }
+                    ]
+                }
+                //-------------
+                //- DONUT CHART -
+                //-------------
+                // Get context with jQuery - using jQuery's .get() method.
+                var donutData = {
+                    labels: [
+                        'Uno',
+                        'Dos',
+                        'Tres',
+                        'Cuatro',
+                        'Cinco',
+                    ],
+                    datasets: [
+                        {
+                            data: [700, 500, 400, 600, 300],
+                            backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc'],
+                        }
+                    ]
+                }
+
+                //-------------
+                //- PIE CHART -
+                //-------------
+                // Get context with jQuery - using jQuery's .get() method.
+                var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+                var pieData = donutData;
+                var pieOptions = {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                }
+                //Create pie or douhnut chart
+                // You can switch between pie and douhnut using the method below.
+                var pieChart = new Chart(pieChartCanvas, {
+                    type: 'pie',
+                    data: pieData,
+                    options: pieOptions
+                })
+                //---------------------
+                //- STACKED BAR CHART -
+                //---------------------
+                var stackedBarChartCanvas = $('#stackedBarChart').get(0).getContext('2d')
+                var stackedBarChartData = jQuery.extend(true, {}, areaChartData)
+
+                var stackedBarChartOptions = {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        xAxes: [{
+                                stacked: true,
+                            }],
+                        yAxes: [{
+                                stacked: true
+                            }]
+                    }
+                }
+
+                var stackedBarChart = new Chart(stackedBarChartCanvas, {
+                    type: 'bar',
+                    data: stackedBarChartData,
+                    options: stackedBarChartOptions
+                })
+            })
+        </script>
+    </body>
+</html>

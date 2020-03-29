@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Plan de Negocios</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- Tempusdominus Bbootstrap 4 -->
+        <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+        <!-- iCheck -->
+        <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+        <!-- JQVMap -->
+        <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="dist/css/adminlte.min.css">
+        <!-- overlayScrollbars -->
+        <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+        <!-- Daterange picker -->
+        <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+        <!-- summernote -->
+        <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
+        <!-- Google Font: Source Sans Pro -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    </head>
+    <body class="hold-transition sidebar-mini layout-fixed">
+        <div class="wrapper">
+
+            <div th:replace="menu"></div>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <div class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-4">
+                                <h1 class="m-0 text-dark">Analizar Segmentos de Mercado</h1>
+                            </div><!-- /.col -->
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                                    Ayuda
+                                </button>
+                            </div>
+                            <div class="col-sm-4">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                                    <li class="breadcrumb-item active">Mercado</li>
+                                    <li class="breadcrumb-item active">Segmentos de Mercado</li>
+                                </ol>
+                            </div><!-- /.col -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container-fluid -->
+                </div>
+                <!-- /.content-header -->
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="container-fluid">
+
+                        <div class="row" id="consulta">
+                            <div class="card card-info col-md-6">
+                                <div class="card-header ">
+                                    <h3 class="card-title">Segmentos</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <!-- form start -->
+                                <form role="form">
+                                    <div class="card-body" id="todo">
+                                        <!-- select -->
+                                        <div class="form-group">
+                                            <label>¿Cuántos segmentos desea crear?</label>
+                                            <select class="form-control" id="combo">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group" id="group1" hidden>
+                                            <label for="seg1">Nombre de Segmento 1</label>
+                                            <input type="text" class="form-control" id="seg1" placeholder="Nombre">
+                                        </div>
+                                        <div class="form-group" id="group2" hidden>
+                                            <label for="seg2">Nombre de Segmento 2</label>
+                                            <input type="text" class="form-control" id="seg2" placeholder="Nombre">
+                                        </div>
+                                        <div class="form-group" id="group3" hidden>
+                                            <label for="seg3">Nombre de Segmento 3</label>
+                                            <input type="text" class="form-control" id="seg3" placeholder="Nombre">
+                                        </div>
+                                        <div class="form-group" id="group4" hidden>
+                                            <label for="seg4">Nombre de Segmento 4</label>
+                                            <input type="text" class="form-control" id="seg4" placeholder="Nombre">
+                                        </div>
+                                        <div class="form-group" id="group5" hidden>
+                                            <label for="seg5">Nombre de Segmento 5</label>
+                                            <input type="text" class="form-control" id="seg5" placeholder="Nombre">
+                                        </div>
+                                    </div>
+                                    <!-- /.card-body -->
+
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-primary" onclick="mostrar()">Crear Segmentos</button>
+                                        <button type="button" class="btn btn-primary" id="crear" hidden onclick="mostrar2()">Crear Tabla</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row" hidden id="tabla">
+                            <!-- left column -->
+                            <div class="col-md-12">
+                                <div class="card card-warning">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Pon los datos de tus productos</h3>
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <form role="form">
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label>Producto</label>
+                                                        <input type="text" class="form-control" placeholder="Uno" th:value="${prod1}">
+                                                        <input type="text" class="form-control" placeholder="Dos" th:value="${prod2}">
+                                                        <input type="text" class="form-control" placeholder="Tres" th:value="${prod3}">
+                                                        <input type="text" class="form-control" placeholder="Cuatro" th:value="${prod4}">
+                                                        <input type="text" class="form-control" placeholder="Cinco" th:value="${prod5}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label>Segmento 1</label>
+                                                        <input type="text" class="form-control" placeholder="...">
+                                                        <input type="text" class="form-control" placeholder="...">
+                                                        <input type="text" class="form-control" placeholder="...">
+                                                        <input type="text" class="form-control" placeholder="...">
+                                                        <input type="text" class="form-control" placeholder="...">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label>Segmento 2</label>
+                                                        <input type="text" class="form-control" placeholder="...">
+                                                        <input type="text" class="form-control" placeholder="...">
+                                                        <input type="text" class="form-control" placeholder="...">
+                                                        <input type="text" class="form-control" placeholder="...">
+                                                        <input type="text" class="form-control" placeholder="...">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label>Segmento 3</label>
+                                                        <input type="text" class="form-control" placeholder="...">
+                                                        <input type="text" class="form-control" placeholder="...">
+                                                        <input type="text" class="form-control" placeholder="...">
+                                                        <input type="text" class="form-control" placeholder="...">
+                                                        <input type="text" class="form-control" placeholder="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" hidden>
+                        	<div class="col-sm-12">    
+       							<button type="submit" class="btn btn-primary float-right">Guardar</button>
+   							</div>
+                        </div>                        
+                    </div><!-- /.container-fluid -->
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <strong>Copyright All rights reserved.</strong>
+            </footer>
+
+            <div class="modal fade" id="modal-default">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Ayuda</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                Basándose en la recopilación de información de mercado realizada, los participantes identifican los potenciales segmentos de mercado para su empresa
+                                La información describe:
+                                • Los tipos de clientes potenciales para el producto.
+                                • Las necesidades y expectativas del cliente hacia el producto.
+                                • Una clasificación de las necesidades de los clientes (utilice calificaciones para indicar la importancia relativa de las necesidades).
+                            </p>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Control sidebar content goes here -->
+            </aside>
+            <!-- /.control-sidebar -->
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery -->
+        <script src="plugins/jquery/jquery.min.js"></script>
+        <!-- jQuery UI 1.11.4 -->
+        <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <script>
+            $.widget.bridge('uibutton', $.ui.button)
+        </script>
+        <!-- Bootstrap 4 -->
+        <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- ChartJS -->
+        <script src="plugins/chart.js/Chart.min.js"></script>
+        <!-- Sparkline -->
+        <script src="plugins/sparklines/sparkline.js"></script>
+        <!-- JQVMap -->
+        <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+        <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+        <!-- jQuery Knob Chart -->
+        <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+        <!-- daterangepicker -->
+        <script src="plugins/moment/moment.min.js"></script>
+        <script src="plugins/daterangepicker/daterangepicker.js"></script>
+        <!-- Tempusdominus Bootstrap 4 -->
+        <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+        <!-- Summernote -->
+        <script src="plugins/summernote/summernote-bs4.min.js"></script>
+        <!-- overlayScrollbars -->
+        <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="dist/js/adminlte.js"></script>
+        <script src="dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="dist/js/pages/dashboard.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="dist/js/demo.js"></script>
+        <script>
+
+            function mostrar2(){
+                document.getElementById("tabla").removeAttribute("hidden");
+                document.getElementById("tabla").style.visibility = "visible";
+
+                //document.getElementById("consulta").removeAttribute("hidden");
+                //document.getElementById("consulta").style.visibility = "hidden";
+
+            }
+
+	        function mostrar() {
+                var cant = document.getElementById("combo").options[document.getElementById("combo").selectedIndex].text;
+
+                document.getElementById("crear").removeAttribute("hidden");
+                document.getElementById("crear").style.visibility = "visible";
+                if (cant >= 1) {
+                    document.getElementById("group1").removeAttribute("hidden");
+                    document.getElementById("group1").style.visibility = "visible";
+                }
+                if (cant >= 2) {
+                    document.getElementById("group2").removeAttribute("hidden");
+                    document.getElementById("group2").style.visibility = "visible";
+                }
+                if (cant >= 3) {
+                    document.getElementById("group3").removeAttribute("hidden");
+                    document.getElementById("group3").style.visibility = "visible";
+                }
+                if (cant >= 4) {
+                    document.getElementById("group4").removeAttribute("hidden");
+                    document.getElementById("group4").style.visibility = "visible";
+                }
+                if (cant >= 5) {
+                    document.getElementById("group5").removeAttribute("hidden");
+                    document.getElementById("group5").style.visibility = "visible";
+                }
+
+                //alert(cant);
+	        	//document.getElementById("seg5").style.display = "none";
+	            //$('#todo').load(window.location.href + "#todo" );
+                //myText.removeAttribute("hidden");
+            }
+        
+            $(function () {
+                /* ChartJS
+                 * -------
+                 * Here we will create a few charts using ChartJS
+                 */
+                var areaChartData = {
+                    labels: ['2021', '2022', '2023', '2024', '2025'],
+                    datasets: [
+                        {
+                            label: 'Uno',
+                            backgroundColor: 'rgba(60,141,188,0.9)',
+                            borderColor: 'rgba(60,141,188,0.8)',
+                            pointRadius: false,
+                            pointColor: '#3b8bba',
+                            pointStrokeColor: 'rgba(60,141,188,1)',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(60,141,188,1)',
+                            data: [28, 48, 40, 19, 86]
+                        },
+                        {
+                            label: 'Dos',
+                            backgroundColor: 'rgba(210, 214, 222, 1)',
+                            borderColor: 'rgba(210, 214, 222, 1)',
+                            pointRadius: false,
+                            pointColor: 'rgba(210, 214, 222, 1)',
+                            pointStrokeColor: '#c1c7d1',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(220,220,220,1)',
+                            data: [65, 59, 80, 81, 56]
+                        },
+                        {
+                            label: 'Tres',
+                            backgroundColor: 'rgba(246,233,49,0.9)',
+                            borderColor: 'rgba(60,141,188,0.8)',
+                            pointRadius: false,
+                            pointColor: '#3b8bba',
+                            pointStrokeColor: 'rgba(60,141,188,1)',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(60,141,188,1)',
+                            data: [28, 48, 40, 19, 86]
+                        },
+                        {
+                            label: 'Cuatro',
+                            backgroundColor: 'rgba(52, 201, 7, 1)',
+                            borderColor: 'rgba(210, 214, 222, 1)',
+                            pointRadius: false,
+                            pointColor: 'rgba(210, 214, 222, 1)',
+                            pointStrokeColor: '#c1c7d1',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(220,220,220,1)',
+                            data: [65, 59, 80, 81, 56]
+                        },
+                        {
+                            label: 'Cinco',
+                            backgroundColor: 'rgba(249,31,31,0.9)',
+                            borderColor: 'rgba(60,141,188,0.8)',
+                            pointRadius: false,
+                            pointColor: '#3b8bba',
+                            pointStrokeColor: 'rgba(60,141,188,1)',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(60,141,188,1)',
+                            data: [28, 48, 40, 19, 86]
+                        }
+                    ]
+                }
+                //-------------
+                //- DONUT CHART -
+                //-------------
+                // Get context with jQuery - using jQuery's .get() method.
+                var donutData = {
+                    labels: [
+                        'Uno',
+                        'Dos',
+                        'Tres',
+                        'Cuatro',
+                        'Cinco',
+                    ],
+                    datasets: [
+                        {
+                            data: [700, 500, 400, 600, 300],
+                            backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc'],
+                        }
+                    ]
+                }
+
+                //-------------
+                //- PIE CHART -
+                //-------------
+                // Get context with jQuery - using jQuery's .get() method.
+                var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+                var pieData = donutData;
+                var pieOptions = {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                }
+                //Create pie or douhnut chart
+                // You can switch between pie and douhnut using the method below.
+                var pieChart = new Chart(pieChartCanvas, {
+                    type: 'pie',
+                    data: pieData,
+                    options: pieOptions
+                })
+                //---------------------
+                //- STACKED BAR CHART -
+                //---------------------
+                var stackedBarChartCanvas = $('#stackedBarChart').get(0).getContext('2d')
+                var stackedBarChartData = jQuery.extend(true, {}, areaChartData)
+
+                var stackedBarChartOptions = {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        xAxes: [{
+                                stacked: true,
+                            }],
+                        yAxes: [{
+                                stacked: true
+                            }]
+                    }
+                }
+
+                var stackedBarChart = new Chart(stackedBarChartCanvas, {
+                    type: 'bar',
+                    data: stackedBarChartData,
+                    options: stackedBarChartOptions
+                })
+            })
+        </script>
+    </body>
+</html>
